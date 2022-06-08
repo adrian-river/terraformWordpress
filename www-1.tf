@@ -3,7 +3,7 @@ resource "digitalocean_droplet" "www-1" {
   name = "wordpress"
   region = "nyc3"
   size = "s-1vcpu-1gb"
-  ssh_keys = [data.digitalocean_ssh_key.otraprueba.id]
+  ssh_keys = [data.digitalocean_ssh_key.otrassh.id]
   user_data = file("userdata/hola.yml")
   
   connection {
