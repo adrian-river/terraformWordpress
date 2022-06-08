@@ -1,0 +1,14 @@
+#cloud-config
+package_update: true
+packages:
+  - docker.io
+write_files:
+  - path: /root/index.html
+    content: |
+      Hola Luis Gago lo logre :D
+runcmd:
+  - cd /root
+  - docker run --name some-wordpress -p 80:80 -d wordpress
+
+#  - docker run -d -v /root/index.html:/usr/share/nginx/html/index.html -p 80:80 nginx
+#  - echo "hola"
